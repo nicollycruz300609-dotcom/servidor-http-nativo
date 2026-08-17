@@ -6,11 +6,11 @@ const server = http.createServer();
 
 server.on('request', (req, res) => {
 console.log(`Requisição recebida! ${req.method} ${req.url}`);
-console.log(' data e hora: ${new date().toiSOString()')
+console.log(' data e hora: ${new date().toiSOString()}')
 
 res.statusCode = 201
-res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-res.end("recurso criado!");
+res.setHeader('Content-Type', 'application/json');
+res.end("JSON.stringfy({"status":ok})!");
 });
 
 server.listen(porta, ()=> {

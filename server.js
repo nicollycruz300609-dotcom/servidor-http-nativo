@@ -18,7 +18,7 @@ const produtos = [
 
 const server = http.createServer((req, res) => {
 const urlObj = new URL(req.url, `http://${req.headers.host}`)
-res.statusCode = 200;
+res.statusCode = 404;
 res.setHeader('Content-Type', 'application/json');
 
 if (req.method == "GET" && urlObj.pathname == "/contato") {
@@ -32,7 +32,7 @@ if (req.method == "GET" && urlObj.pathname == "/produtos") {
 return res.end(JSON.stringify(produtos));
 }
 
-res.end(JSON.stringify({ "data": "Página Inicial" }));
+res.end(JSON.stringify({ " a página não existe" }));
 });
 
 server.listen(port, () => {
